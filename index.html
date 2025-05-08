@@ -277,6 +277,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- 头部 -->
         <div class="header">
             <h1>婚礼邀请函</h1>
             <div class="subtitle">INVITATION</div>
@@ -285,6 +286,7 @@
         <!-- 替换为你们的婚纱照 -->
         <img src="pic/2.jpg" alt="新郎新娘婚纱照" class="couple-photo">
         
+        <!-- 邀请卡片 -->
         <div class="invitation-card">
             <div class="invitation-text">
                 <p>谨定于公历2025年05月17日（星期六）</p>
@@ -308,7 +310,7 @@
             </div>
         </div>
         
-        
+        <!-- 细节 -->
         <div class="details">
             <!-- 婚礼时间 -->
             <div class="detail-box">
@@ -339,7 +341,6 @@
 
             </div>
             
-
         </div>
         
         <!-- 婚纱照 -->
@@ -360,10 +361,41 @@
         </div>
         
                 
+        <!-- 页脚 -->
         <div class="footer">
             <p>期待您的光临</p>
             <p>© 2025 杨彦琳 & 袁丹 婚礼</p>
         </div>
+
+
+        <!-- 音乐 -->
+        <!-- 背景音乐播放器（自动循环播放） -->
+        <audio id="bgMusic" loop autoplay>
+            <source src="music/告白气球 - 周杰伦.mp3" type="audio/mpeg">
+            您的浏览器不支持音频播放
+        </audio>
+        
+        <!-- 音乐控制按钮（可选） -->
+        <div class="music-control">
+            <button onclick="toggleMusic()">🎵 背景音乐</button>
+        </div>
+        
+        <script>
+            // 自动播放处理（解决浏览器限制）
+            document.addEventListener('DOMContentLoaded', function() {
+            const music = document.getElementById('bgMusic');
+            
+            // 用户交互后解锁音频（解决Chrome自动播放限制）
+            document.body.addEventListener('click', function() {
+                music.play().catch(e => console.log('播放需要用户交互'));
+            }, { once: true });
+            
+            // 音乐控制函数
+            window.toggleMusic = function() {
+                music.paused ? music.play() : music.pause();
+            };
+            });
+        </script>
     </div>
 </body>
 </html>
