@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>执子之手·与子偕老 - 我们的婚礼邀请</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background-color: #fff9f9;
+            color: #5e3a3a;
+            line-height: 1.8;
+            background-image: url('https://img.freepik.com/free-vector/chinese-pattern-background_53876-90035.jpg');
+            background-size: 30%;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            position: relative;
+        }
+        
+        .header:before, .header:after {
+            content: "囍";
+            font-size: 30px;
+            color: #e74c3c;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .header:before {
+            left: 20%;
+        }
+        
+        .header:after {
+            right: 20%;
+        }
+        
+        h1 {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 3rem;
+            color: #e74c3c;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .couple-photo {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 30px 0;
+            border: 10px solid #fff;
+            outline: 2px solid #e74c3c;
+        }
+        
+        .invitation-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
+            position: relative;
+            border-top: 10px solid #e74c3c;
+        }
+        
+        .invitation-card:before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: #e74c3c;
+            border-radius: 50%;
+        }
+        
+        .invitation-text {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        .names {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        /* 姓名样式设置 */
+        .name {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 2rem;
+            margin: 0 15px;
+            background: linear-gradient(to right, #D4AF37, #F5D020);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            
+
+        }
+        
+        .and {
+            font-size: 1.5rem;
+        }
+        
+        .details {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        
+        .detail-box {
+            background-color: #f8e8e8;
+            padding: 20px;
+            border-radius: 5px;
+            width: 30%;
+            min-width: 250px;
+            margin: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .detail-title {
+            font-family: 'Ma Shan Zheng', cursive;
+            color: #e74c3c;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .rsvp-form {
+            background-color: #f8e8e8;
+            padding: 30px;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+        
+        .form-title {
+            text-align: center;
+            font-family: 'Ma Shan Zheng', cursive;
+            color: #e74c3c;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Noto Serif SC', serif;
+        }
+        
+        button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            font-family: 'Noto Serif SC', serif;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .gallery-item {
+            width: 30%;
+            min-width: 200px;
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: all 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .header:before, .header:after {
+                display: none;
+            }
+            
+            .name {
+                font-size: 1.5rem;
+            }
+            
+            .detail-box {
+                width: 100%;
+            }
+            
+            .gallery-item {
+                width: 45%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>婚礼邀请函</h1>
+            <div class="subtitle">INVITATION</div>
+        </div>
+        
+        <!-- 替换为你们的婚纱照 -->
+        <img src="pic/2.jpg" alt="新郎新娘婚纱照" class="couple-photo">
+        
+        <div class="invitation-card">
+            <div class="invitation-text">
+                <p>谨定于公历2025年05月17日（星期六）</p>
+                <p>农历乙巳年 四月二十</p>
+                <p>为<span class="name">杨彦琳</span>先生与<span class="name">袁丹</span>女士</p>
+                <p>举行结婚典礼敬备喜筵</p>
+                <p>恭请光临</p>
+            </div>
+            
+            <div class="names">
+                <div class="name">杨彦琳</div>
+                <div class="and">&</div>
+                <div class="name">袁丹</div>
+            </div>
+            
+            <div class="invitation-text">
+                <p>两姓联姻，一堂缔约</p>
+                <p>良缘永结，匹配同称</p>
+                <p>看此日桃花灼灼，宜室宜家</p>
+                <p>卜他年瓜瓞绵绵，尔昌尔炽</p>
+            </div>
+        </div>
+        
+        <div class="details">
+            <div class="detail-box">
+                <div class="detail-title">婚礼时间</div>
+                <p>📅 2025年05月17日 </p>
+                <p>📅 农历乙巳年 四月二十</p>
+            </div>
+            
+            <div class="detail-box">
+                <div class="detail-title">婚礼地点</div>
+                <p>📍蒲麻禧苑礼宴中心（供销社院内）</p>
+                <a href="https://surl.amap.com/3L4nXARLdid" target="_blank" style="
+                    display: inline-block;
+                    padding: 8px 15px;
+                    background-color: #e74c3c;
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 4px;
+                    margin: 10px 0;
+                ">
+                    🗺️ 点击查看地图
+                </a>
+
+                <!-- <p>📍 <a href="https://surl.amap.com/3L4nXARLdid" target="_blank" style="color: #e74c3c; text-decoration: none; font-weight: bold;">
+                    查看婚礼地点地图 →
+                  </a></p> -->
+
+            </div>
+            
+
+        </div>
+        
+        <div class="photo-gallery">
+            <!-- 替换为你们的婚纱照 -->
+            <div class="gallery-item">
+                <img src="pic/1.jpg" alt="婚纱照1">
+            </div>
+            <div class="gallery-item">
+                <img src="pic/3.jpg" alt="婚纱照3">
+            </div>
+            <div class="gallery-item">
+                <img src="pic/4.jpg" alt="婚纱照4">
+            </div>
+            <div class="gallery-item">
+                <img src="pic/5.jpg" alt="婚纱照5">
+            </div>
+        </div>
+        
+                
+        <div class="footer">
+            <p>期待您的光临</p>
+            <p>© 2025 杨彦琳 & 袁丹 婚礼</p>
+        </div>
+    </div>
+</body>
+</html>
